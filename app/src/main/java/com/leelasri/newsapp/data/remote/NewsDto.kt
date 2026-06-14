@@ -1,4 +1,4 @@
-package com.leelasri.newsapp.ui.theme.data.remote
+package com.leelasri.newsapp.data.remote
 
 data class NewsResponse(
     val status: String,
@@ -18,4 +18,12 @@ data class ArticleDto(
 data class SourceDto(
     val name: String?,
     val id: String?
+)
+
+fun ArticleDto.toDomain() = Article(
+    title = title ?: "No Title",
+    description = description ?: "No Description",
+    urlToImage = urlToImage,
+    publishedAt = publishedAt ?: "",
+    sourceName = source?.name ?: "Unknown"
 )
