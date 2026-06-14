@@ -69,6 +69,7 @@ dependencies {
     // ViewModel + Lifecycle
     implementation(libs.androidx.activity.compose.v182)
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+    implementation(libs.coil.compose)
 
 
     testImplementation(libs.junit)

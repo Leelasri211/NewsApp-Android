@@ -1,4 +1,4 @@
-package com.leelasri.newsapp.ui.theme.data.remote
+package com.leelasri.newsapp.data.remote
 
 import retrofit2.http.GET
 import retrofit2.http.Query

@@ -1,4 +1,4 @@
-package com.leelasri.newsapp.ui.theme.data.remote
+package com.leelasri.newsapp.data.remote
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
