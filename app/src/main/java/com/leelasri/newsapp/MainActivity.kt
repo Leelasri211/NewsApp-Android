@@ -16,8 +16,9 @@ import androidx.lifecycle.lifecycleScope
 import com.leelasri.newsapp.data.remote.RetrofitInstance
 import com.leelasri.newsapp.ui.home.HomeScreen
 import com.leelasri.newsapp.ui.theme.NewsAppTheme
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

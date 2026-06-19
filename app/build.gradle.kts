@@ -70,7 +70,7 @@ dependencies {
     implementation(libs.androidx.activity.compose.v182)
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
     implementation(libs.coil.compose)
-
+    implementation("androidx.compose.material:material:1.6.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
