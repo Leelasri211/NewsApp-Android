@@ -12,11 +12,11 @@ class NewsRepository @Inject constructor(
 
 //    private val api =  RetrofitInstance.api  // since we added hilt Inject - this line not needed any more
 
-    suspend fun getArticles(): Result<List<Article>> {
+    suspend fun getArticles(forceRefresh: Boolean = false): Result<List<Article>> {
         return try {
-            val response = api.getTopHeadlines()
-            val article = response.articles.map { it.toDomain() }
-            Result.success(article)
+            val page = if (forceRefresh) (1..3).random() else 1
+            val response = api.getTopHeadlines(page = page)
+            Result.success(response.articles.map { it.toDomain() })
         } catch (e: Exception) {
             Result.failure(e)
         }

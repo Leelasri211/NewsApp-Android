@@ -48,12 +48,16 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.material3)
 
     // Hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)                        // KSP-based compiler (faster than kapt)
     implementation(libs.hilt.navigation.compose)   // hiltViewModel() in Compose
     implementation(libs.lifecycle.viewmodel.compose)
+
+    implementation(libs.navigation.compose)
+    implementation("androidx.compose.material:material-icons-extended:1.6.7")
 
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
