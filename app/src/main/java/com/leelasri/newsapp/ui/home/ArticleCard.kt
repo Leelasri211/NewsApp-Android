@@ -1,5 +1,7 @@
 package com.leelasri.newsapp.ui.home
 
+import android.R.attr.onClick
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -25,11 +27,12 @@ import coil.compose.AsyncImage
 import com.leelasri.newsapp.data.remote.Article
 
 @Composable
-fun ArticleCard(article: Article){
+fun ArticleCard(article: Article,onClick: () -> Unit){
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 16.dp, vertical = 8.dp),
+            .padding(horizontal = 16.dp, vertical = 8.dp)
+            .clickable { onClick() },
         elevation = CardDefaults.cardElevation(4.dp)
     ) {
         Column {

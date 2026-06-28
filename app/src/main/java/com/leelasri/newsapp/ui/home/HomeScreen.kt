@@ -26,10 +26,12 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.ui.graphics.Color
+import com.leelasri.newsapp.data.remote.Article
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
+fun HomeScreen(viewModel: HomeViewModel = hiltViewModel(),
+               onArticleClick: (Article) -> Unit) {
 
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val pullRefreshState = rememberPullRefreshState(
@@ -78,7 +80,9 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
                     contentPadding = PaddingValues(vertical = 8.dp)
                 ) {
                     items(uiState.articles) { article ->
-                        ArticleCard(article = article)
+                        ArticleCard(
+                            article = article,
+                            onClick = { onArticleClick(article) })
                     }
                 }
             }
@@ -89,5 +93,9 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
             state = pullRefreshState,
             modifier = Modifier.align(Alignment.TopCenter)
         )
+
+
     }
+
+
 }
