@@ -64,4 +64,14 @@ class HomeViewModel @Inject constructor(
             )
         }
     }
+
+    fun toggleSaveArticle(article: Article, isSaved: Boolean) {
+        viewModelScope.launch {
+            if (isSaved) {
+                repository.unsaveArticle(article.url ?: "")
+            } else {
+                repository.saveArticle(article)
+            }
+        }
+    }
 }
