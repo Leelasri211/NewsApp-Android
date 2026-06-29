@@ -25,5 +25,6 @@ fun ArticleDto.toDomain() = Article(
     description = description ?: "No Description",
     urlToImage = urlToImage,
     publishedAt = publishedAt ?: "",
-    sourceName = source?.name ?: "Unknown"
+    sourceName = source?.name ?: "Unknown",
+    url = url   // add this
 )
